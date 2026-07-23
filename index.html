@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca FIME</title>
+    <!-- Iconos oficiales de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fime-cyber-theme">
+
+    <!-- MENÚ FLOTANTE ASIMÉTRICO TIPO CÁPSULA -->
+    <header class="navbar-capsule">
+        <div class="brand-identity">
+            <div class="hexagon-icon">
+                <!-- Tuerca mecánica en constante rotación -->
+                <i class="fa-solid fa-gear logo-gear-spin"></i>
+            </div>
+            <div class="brand-titles">
+                 <span class="sub-title">FACULTAD DE INGENIERÍA</span>
+                 <span class="main-title">FIME <span class="accent-dot">.</span> UNAC</span>
+            </div>
+        </div>
+        <nav class="nav-capsule-links">
+             <a href="cursos.html" class="link-item active">REPOSITORIO</a>
+             <!-- <a href="index.html" class="link-item active">INICIO</a> -->
+             <!-- <a href="cursos.html" class="link-item">REPOSITORIO</a> -->
+             <a href="#soporte" class="link-item hide-mobile">SOPORTE</a>
+        </nav>
+    </header>
+
+    <!-- CUERPO CENTRAL EQUILIBRADO -->
+    <main class="main-viewport">
+        <!-- Cuadrícula técnica sutil de fondo -->
+        <div class="vector-blueprint-bg"></div>
+
+        <!-- CONTENEDOR DIVIDIDO (TEXTOS IZQUIERDA // ENGRANAJES DERECHA) -->
+        <div class="main-split-container">
+            
+            <!-- LADO IZQUIERDO: CONTENIDO Y TEXTOS -->
+            <div class="content-wrapper">
+                <div class="sys-terminal-tag">
+                    <span class="pulse-indicator"></span>
+                    <span class="terminal-text">ACTIVO 24 HORAS // FIME</span>
+                </div>
+
+                <h1 class="main-heading">
+                    BIBLIOTECA VIRTUAL <br>
+                    <span class="stroke-text">INGENIERÍA</span> <span class="gold-block">MECÁNICA</span>
+                </h1>
+
+                <p class="project-synopsis">
+                    Módulo de gestión inteligente y descarga directa de material académico de alta complejidad. Diseñado para centralizar planos, guías de laboratorio y exámenes oficiales.
+                </p>
+
+                <div class="action-dock">
+                    <a href="cursos.html" class="action-btn-primary">
+                        <span class="btn-inner">EXPLORAR CURSOS</span>
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                    <!-- Enlace de anclaje inteligente dirigido a la sección específica del repositorio -->
+                    <!-- Reemplaza tu enlace actual de ASESORÍAS por este -->
+                    <a href="asesoria.html" class="link-item" onclick="if(window.innerWidth < 768) { this.href='asesoria.html'; }">ASESORÍAS</a>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO: LA TUERCA MECÁNICA EN MOVIMIENTO -->
+            <div class="mechanism-wrapper">
+                <div class="gear-container-3d">
+                    <i class="fa-solid fa-gear gear-animated"></i>
+                    <i class="fa-solid fa-gear gear-animated-reverse"></i>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- SECCIÓN DE TARJETAS INFERIORES CON CORTE EN CHAFLÁN -->
+        <section class="mechanical-cards-container">
+            <div class="mech-card">
+                <div class="card-glow-line"></div>
+                <div class="card-body">
+                    <span class="card-index">01 //</span>
+                    <h3>+10 Ciclos</h3>
+                    <p>Mapeo completo del plan de estudios.</p>
+                </div>
+            </div>
+            <div class="mech-card">
+                <div class="card-glow-line"></div>
+                <div class="card-body">
+                    <span class="card-index">02 //</span>
+                    <h3>+50 Libros</h3>
+                    <p>Textos base en alta resolución.</p>
+                </div>
+            </div>
+            <div class="mech-card">
+                <div class="card-glow-line"></div>
+                <div class="card-body">
+                    <span class="card-index">03 //</span>
+                    <h3>+150 Exámenes</h3>
+                    <p>Historial oficial resuelto.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA MINIMALISTA CON ID DE ANCLAJE Y ESTILO DE TRANSICIÓN PARA EL DESTELLO -->
+    <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
+        <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
+        <span class="ver-num">v2.6.0_FIME</span>
+    </footer>
+
+    <!-- SCRIPT DE INTERACCIÓN TÉCNICA PARA EL BOTÓN SOPORTE -->
+    <script>
+        document.querySelector('a[href="#soporte"]').addEventListener('click', function(e) {
+            const footer = document.getElementById('soporte');
+            
+            // Inyectamos el destello ámbar/dorado de la interfaz
+            footer.style.backgroundColor = 'var(--gold-dim)';
+            footer.style.boxShadow = 'inset 0 0 20px rgba(245, 158, 11, 0.2), 0px -10px 30px rgba(245, 158, 11, 0.15)';
+            footer.style.color = 'var(--gold-tech)';
+
+            // Apagamos el efecto de iluminación tras 800ms devolviendo su estado original mate
+            setTimeout(() => {
+                footer.style.backgroundColor = '#0a0d14';
+                footer.style.boxShadow = 'none';
+                footer.style.color = 'rgba(255, 255, 255, 0.2)';
+            }, 800);
+        });
+    </script>
+
+</body>
+</html>

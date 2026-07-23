@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca FIME - Ciclos/cursos</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fime-cyber-theme">
+
+    <!-- MENÚ FLOTANTE ASIMÉTRICO -->
+    <header class="navbar-capsule">
+        <div class="brand-identity">
+            <div class="hexagon-icon">
+                <i class="fa-solid fa-gear logo-gear-spin"></i>
+            </div>
+            <div class="brand-titles">
+                <span class="sub-title">FACULTAD DE INGENIERÍA</span>
+                <span class="main-title">FIME <span class="accent-dot">.</span> UNAC</span>
+            </div>
+        </div>
+        <nav class="nav-capsule-links">
+            <a href="index.html" class="link-item">INICIO</a>
+            <!--<a href="cursos.html" class="link-item">REPOSITORIO</a>
+             <a href="clases.html" class="link-item active">CICLOS</a> -->
+        </nav>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="dashboard-viewport">
+        <div class="vector-blueprint-bg"></div>
+
+        <div class="dashboard-layout-grid">
+            
+            <!-- PANEL IZQUIERDO: MÓDULO DE ASISTENCIA -->
+            <aside class="terminal-sidebar" id="helpSidebar">
+                <div class="sidebar-trigger" onclick="toggleHelpPanel()">
+                    <div class="panel-tag">
+                        <span class="terminal-text"> [ ASISTENCIA_ACADEMICA ] </span>
+                    </div>
+                    <div class="trigger-title-flex">
+                        <h3>¿Necesitas Ayuda?</h3>
+                        <i class="fa-solid fa-chevron-down" id="triggerArrow"></i>
+                    </div>
+                </div>
+                
+                <div class="sidebar-collapsible-content" id="helpContent">
+                    <p class="panel-desc">¿Volando en los primeros ciclos? Ofrecemos soporte estratégico para asegurar tu bica o trica.</p>
+                    
+                    <div class="services-stack">
+                        <div class="service-item">
+                            <div class="service-header">
+                                <i class="fa-solid fa-user-gear svc-icon"></i>
+                                <h4>Asesoría Personal</h4>
+                            </div>
+                            <p>Resolución de prácticas dirigidas y preparación exclusiva para parciales y finales.</p>
+                            <span class="svc-badge">1° y 2° Ciclo</span>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="service-header">
+                                <i class="fa-solid fa-users svc-icon"></i>
+                                <h4>Talleres Grupales</h4>
+                            </div>
+                            <p>Repasos intensivos antes de exámenes céntricos: Cálculo, Física y Geometría Descriptiva.</p>
+                            <span class="svc-badge">Full Práctica</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/51929028924?text=Hola,%20solicito%20apoyo%20acad%C3%A9mico%20para%20mis%20cursos." target="_blank" class="action-btn-primary full-width-btn">
+                        <span class="btn-inner">SOLICITAR APOYO</span>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- PANEL CENTRAL/DERECHO: REPOSITORIO MAPEADO CON BUSCADOR -->
+            <main class="repository-content">
+                <div class="repo-header-flex">
+                    <div class="repo-title-block">
+                        <div class="sys-terminal-tag compact-tag">
+                            <span class="terminal-text">PLAN_ESTUDIOS</span>
+                        </div>
+                        <h2>Plan de Estudios Mecánica</h2>
+                    </div>
+
+                    <div class="cyber-search-box">
+                        <i class="fa-solid fa-magnifying-glass search-inner-icon"></i>
+                        <input type="text" id="courseSearch" placeholder="Escribe un curso o ciclo (Ej: Ciclo I)...">
+                    </div>
+                </div>
+
+                <!-- CONTENEDOR EN REJILLA DE LOS CICLOS -->
+                <div class="cycles-grid-container">
+
+                    <!-- ================= CICLO I ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo I</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_01</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="calculo diferencial matematica ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Cálculo Diferencial</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1QcYvQdr6US311BkOux1mRg56eGZ1yIHO?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1-cU1-DAl6mHh5frFQrVGzXgwnysPHevE?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1U8MMd9lUt8QYo83x5rNvavouWYLs1tsE?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="complemento de matematica ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Complemento de Matemática</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1QN_SqpNVJR8AAyAlU5UhQfTy2TvHdGKi?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1MS0nXixC6jAZxz_vgGCSYgPp7lmzZu8K?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1Gf6sj-M_1dG3lA54j1C3bEAfybVtHLYb?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="dibujo tecnico planos ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Dibujo Técnico</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1duxxYAgI5lCp3DnENhsQecMJV4wC_VMx?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1HLFYzPnIOUUSI1VHCq8N-zhzoqh_HOgv?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1GHgHdy2X6w9XuR6DB7BVPeab8bYeL0bW?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="quimica aplicada laboratorio ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Química Aplicada</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1c-ENTE-YLqDGeSR1d34kYUiC0M7A1_Np?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/12kXh5hU726Jv_UvWXs_OylcowFjcowy8?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/15_Bfe2EclC5hR7Bx1oCVDAj3qAREcPjI?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="introduccion a la ing mecanica ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Introducción a la Ing. Mecánica</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1S97_Hv4pxjKDPm4MxhEXPAprgltDw6b8?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1I5OEiT_diXgi-r2WgWkz7z9alzB_bMIQ?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/10B9Bc3E9RTkfH8L3X_vP_bUG-Ke_d4n6?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="etica y resp social responsabilidad ciclo i primero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ética y Resp. Social</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1N0V3O9uvqsZFUPFPhDOqPIjBqM_22HCM?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1cHwFlOiB_7Caf9dcGa_m7ULDqP6ra2yt?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1r6SuZUW_K-cDmfqzuDq-EKxqnyI5lRPY?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO II ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo II</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_02</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="calculo integral matematica ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Cálculo Integral</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1K3DaSPkdWSahDWbCJKAUw-sYm1FOXUwT?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/18EFgXB3KAlro5vcFeC1CYs0V3ZkqV5Vd?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1ZDz0-HwfRf3o01SsHHyt7wkK80TWbg4d?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="fisica i mecanica ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Física I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1r2zCGN2cc4HfYH--naSAVZl_9AKjC7E2?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1J9vy08poPDOFPdg2Uyjyqs7siqUgqNbJ?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1OmgALGLouy64ZG795y6MOObkIWX_uCqC?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="dibujo mecanico i cad ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Dibujo Mecánico I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/14ktXeT_TwXECCX-MhEa0627iPAYO3hXB?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1ym4ju6kzql7UvdqmSS42XVFaIS5SVB6g?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1PQfv55zT896pyn0mb0LFiP8LSdMpLgOC?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="lenguaje de programacion informatica ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Lenguaje de Programación</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1WtkWGp_7J3uosn7sVY5_3qwAUlRwA5io?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/18LfOr5P8jMXhc2e8fg7VixokSmTN799m?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1lDcQ4KMfKd8Xx3Iu60VD273r_7YleH9x?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ciencia y tecnologia de los materiales i ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ciencia y Técnologia de los Materiales I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1r3klFQly8TFCXolOJO0bcvheYnXqlNLm?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1etInM1NtppPXAF9wB9qjKNSI-Hx37XSM?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1-RKfnaOhZOQVILn6FsrILDVR_4tPHeH9?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="metodos y tecnicas de la ciencia investigacion ciclo ii segundo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Métodos y Técnicas de la Ciencia</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1w13O7la80j0_g6QTYRIttv4RaBk4SI5_?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1mgmExwy--Vmb98-DSv8QHFJhz9h4V3Os?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1FA1qwuCkgq5GyzsKpGGzrvGxGGo83SV4?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO III ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo III</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_03</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="calculo multivariable matematica ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Cálculo Multivariable</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1YlfhGCCxedVucuLcTmLk3JfF7QnN_7T1?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1AadtdrZ5fToKPO55hzBggVH_lS9cYq7f?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/19BaA3MtnYb_J2ExtnaGIlkQr9o9aTi5J?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="fisica ii electromagnetismo ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Física II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1COTizFU2GWdZwjhpECHLYE-aukQZZWo_?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1oCeGRvFZo1RuO4IZSlpB_-beJqmZqN6n?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/15YOmuLgoB8lUvvMfYIy-xnkmTJCHyWdO?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="estatica fuerzas vectores ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Estática</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1TFhAnsAX0lkm7yiCx3GiNZPDnEMJ_2vn?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1xx0qZNjhga1jmhYl2t088EyOYQSuVV_y?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1MaKrUUjQT3WuqcfZK-8uulS3_32pCgGl?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="dibujo mecanico ii autocad ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Dibujo Mecánico II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1dKDP5SEMm-U694km9y1SKa3Yv4atALzk?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1eFu5reHV7xPErB1VnnpOprz5xnO-fsrl?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1ylDIiJA-33vpNp_BslujzZyD_4bf3Llu?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ciencia de los materiales ii aleaciones ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ciencia de los Materiales II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1aaKPddWmItZnYcpY1xfTeJ_B0feK2152?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1GNtEZAFS78EgymfiQRVsHw8m2vvjXW4X?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1iKSEkHMivmyFuWH3FV4MOgaFbifG8Woh?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ingles tecnico idioma ciclo iii tercero">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Inglés Técnico</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1ofWhONOJBnlC7zFgmgAwwzXgeJRaUkME?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1LamcFiSVux-vckClquU_K2tIS800GlvZ?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1IDh07P6vy4ZH_nFY2rApcTPlkTge-FGT?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO IV ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo IV</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_04</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="ecuaciones diferenciales edo ciclo iv cuarto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ecuaciones Diferenciales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1Fqa0-ZMIZH24A3-ONrf-cIJq8fWmrOrJ?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1CKoENb7L_M8u91oS3obRxmVMLfKKymDU?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1u4OCuTqnzXupUKIPYYYiU9t65WTYiDlc?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="fisica iii optica ondas ciclo iv cuarto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Física III</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1W2W-ECMKVnFrN01rYdRag3G869kPFfEG?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1UTt7FwHBEXd-5VUPboJdtlg_ajke_LhI?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1V7kfVSXTp1IC4GHZ1dTp63nTmloLztwz?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="dinamica cinemica ciclo iv cuarto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Dinámica</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1gmnbye1z0kG6L_C6xXa8u5FHWfQcEO5x?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1yDZ2mcbdI3-jTPaZNpaTUknfV3EdSWIy?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1SN-MPnoGNRZZ5akL4CVTE1QTmkZ-965R?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="proceso de manufactura i fundicion ciclo iv cuarto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Proceso de Manufactura I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1al4gAONAhet1KGCrAuWhgchO4MoBb5Gg?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1ebtqcWposI27iDWp9MS46jWdexJ40Fxp?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1J_BB7hdHQ3QxmUjnkdK5hn1MNfZmooz8?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="estadistica aplicada a la ingenieria probabilidades ciclo iv cuarto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Estadística Aplicada A La Ingeniería</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1rJkBdavx3pKIxBKmEdUZQr67GHnTLC86?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1wMlQT6LFJRba11BHCiRmrEpJfc2axVqK?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1odjiPYhz-j54hgg7FbXSun-2NqvjI6kK?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO V ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo V</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_05</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="mecanica de materiales i resistencia esfuerzo ciclo v quinto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Mecánica de Materiales I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1qfXU1Z0iLS0z76RT-AziF6ZQ08K-QL72?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/19l8_JQAh82UeH9adT4AKub0maILecMtd?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/17EpTkFuNzHreZDQR5Cgtr5RPcMXXqspZ?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="termodinamica i energia ciclo v quinto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Termodinámica I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1FC35pgHZ1bgeQ-kbnGJejM5-1fdvsZ6l?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1NZVF-in5QrMQAZv9Z0QAl_RUhvU_Uc-L?usp=drive_link" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="https://drive.google.com/drive/folders/1qrF4_Kj-hhFp7HjJfd0tzMi2UvMLGRp0?usp=drive_link" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="mecanica de fluidos i presiones ciclo v quinto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Mecánica de Fluidos I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="https://drive.google.com/drive/folders/1oP0Oz9i_09PMgAXqz1GGJNIf6flk2EW6?usp=drive_link" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="https://drive.google.com/drive/folders/1lKYBNEB_LVdXVOAvEKMSONmizlY__" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO VI ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo VI</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_06</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="mecanica de materiales ii elasticidad ciclo vi sexto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Mecánica de Materiales II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="termodinamica ii ciclos vapor ciclo vi sexto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Termodinámica II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="mecanica de fluidos ii tuberias ciclo vi sexto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Mecánica de Fluidos II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="metodos numericos matlab programacion ciclo vi sexto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Métodos Númericos</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="circuitos electricos electricidad amperaje ciclo vi sexto">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Circuitos Eléctricos</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO VII ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo VII</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_07</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="diseno de elem de maq i ejes engranajes ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Diseño de Elem. de Máq. I</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="elementos finitos apl a la ing fea ansys ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Elementos Finitos Apl. a la Ing.</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="formulacion y eval de proy proyectos costos ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Formulación y Eval. de Proy.</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="maquinas hidraulicas bombas turbinas ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Máquinas Hidráulicas</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="motores de combustion interna mci ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Motores de Combustión Interna</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="transferencia de calor y masa conduccion ciclo vii septimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Transferencia de Calor y Masa</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO VIII ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo VIII</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_08</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="ingenieria automotriz carros diseño ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ingeniería Automotriz</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ingenieria y tecnogia de la sold soldadura ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ingeniería y Tecnogía de la Sold.</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="administracion de la produccion planta gestion ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Administración de la Producción</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="diseno de elementos de maquina ii rodamientos ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Diseño de Elementos de Máquina II</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="estructuras metalicas para uso indust perfiles vigas ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Estructuras Metálicas Para Uso Indust.</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="maquinas electricas motores transformadores ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Máquinas Eléctricas</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="practicas pre profesionales ppp trabajo ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Prácticas Pre Profesionales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="sistemas hibridos industriales energia solar eolica ciclo viii octavo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Sistemas Híbridos Industriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO IX ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo IX</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_09</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="gestion y mantenimiento de maquinaria pesada camiones ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Gestión y Mantenimiento de Maquinaria Pesada</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="proyecto de ingenieria mecanica diseño ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Proyecto de Ingeniería Mecánica</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="proyecto de tesis investigacion ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Proyecto de Tesis</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="electronica industrial plc automatas ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Electrónica Industrial</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="fuerza motriz y generacion de energia electrica plantas centrales ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Fuerza Motriz y Generacion de Energía Electrica</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="instalaciones electricas industriales cableado subestacion ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Instalaciones Electricas Industriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="sistema de transporte mecanica y maquinaria industrial fajas poleas ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Sistema de Transporte Mecánica y Maquinaria Industrial</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="transporte masivo sostenible trenes electrico ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Transporte Masivo Sostenible</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="vibracion en maquinaria industrial frecuencias mantenimiento analisis ciclo ix noveno">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Vibracion en Maquinaria Industrial</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= CICLO X ================= -->
+                    <div class="cycle-section-card">
+                        <div class="cycle-card-header">
+                            <h3>Ciclo X</h3>
+                            <span class="cycle-badge-tech">SEMESTRE_10</span>
+                        </div>
+                        <div class="courses-accordion-stack">
+                            <div class="accordion-item course-card" data-keywords="sensores y actuadores industriales instrumentacion ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Sensores y Actuadores Industriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="asesoramiento de la calidad de procesos instrustriales gestion iso ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Asesoramiento de la Calidad de Procesos Instrustriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="automatizacion de proyectos industriales plc scada ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Automatización de Proyectos Industriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="costos y presupuesto en procesos industriales economia finanzas ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Costos y Presupuesto en Procesos Industriales</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="desarrollo de tesis investigacion sustentacion ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Desarrollo de Tesis</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ingenieria del mantenimiento tpm rcm gestion ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ingeniería del Mantenimiento</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="refrigeracion y climatizacion aire acondicionado hvac ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Refrigeración y Climatización</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                            <div class="accordion-item course-card" data-keywords="ventilacion industrial extractores aire ciclo x decimo">
+                                <button class="accordion-trigger" onclick="toggleAccordion(this)"><h3>Ventilación Industrial</h3><i class="fa-solid fa-plus icon-state"></i></button>
+                                <div class="accordion-panel"><div class="folder-grid-actions"><a href="#" class="folder-btn btn-exam"><i class="fa-solid fa-file-signature"></i> EXÁMENES</a><a href="#" class="folder-btn btn-book"><i class="fa-solid fa-book-bookmark"></i> LIBROS</a><a href="#" class="folder-btn btn-class"><i class="fa-solid fa-video"></i> CLASES</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <footer class="footer-minimal">
+        <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
+        <span class="ver-num">v2.6.0_FIME</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
