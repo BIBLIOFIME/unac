@@ -8,22 +8,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Contenedor adaptativo: pegado arriba en PC, centrado en móviles */
-        .mobile-help-container {
-            padding: 1px 20px 30px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            min-height: auto;
+        /* FORZAR QUE EL BODY OCUPE EXACTAMENTE TODA LA PANTALLA Y SE DISTRIBUYA EN VERTICAL */
+        html, body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Evita por completo que aparezca la barra de navegación/scroll */
+        }
+
+        body.fime-cyber-theme {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* REAJUSTE DE CONTENEDORES PARA EVITAR DESBORDES */
+        .dashboard-viewport {
+            flex: 1; /* Toma todo el espacio intermedio disponible entre el menú y el footer */
+            display: flex;
+            align-items: center; /* Centra verticalmente el contenido */
+            justify-content: center;
+            padding: 90px 5% 20px 5% !important; /* Reduce paddings para que no empuje el footer */
+            min-height: auto !important; 
+            height: calc(100vh - 160px); /* Ajuste dinámico restando la barra superior y footer */
+        }
+
+        .mobile-help-container {
+            padding: 0 20px;
+            max-width: 600px; /* Un poco más angosto para optimizar proporciones */
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
-        /* En pantallas táctiles/celulares vuelve a centrarse verticalmente */
         @media (max-width: 767px) {
             .mobile-help-container {
-                padding: -1px 20px 30px 20px;
-                min-height: 1vh;
-                justify-content: center;
+                padding: 0 15px;
+            }
+            .mobile-help-card {
+                padding: 15px !important; /* Tarjeta un poco más compacta en celulares */
+            }
+            .mobile-help-card h2 {
+                font-size: 1.3rem !important; /* Reduce títulos para que no ocupen tantas líneas */
+            }
+            .mobile-help-card .panel-desc {
+                font-size: 0.85rem !important;
+                margin-bottom: 15px !important;
+            }
+            .service-item {
+                padding: 10px !important;
+                margin-bottom: 10px !important;
             }
         }
 
@@ -36,25 +71,33 @@
             backdrop-filter: blur(10px);
             width: 100%;
         }
+
         .mobile-help-card .panel-desc {
             color: #8a99ad;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 20px;
             border-left: 3px solid #ff0055;
             padding-left: 10px;
         }
+
         .back-repo-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             color: #00f0ff;
             text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
             font-family: monospace;
             cursor: pointer;
             width: fit-content;
+        }
+
+        /* CORRECCIÓN DE UNIDADES DE TEXTO EN EL FOOTER */
+        .footer-minimal {
+            padding: 15px 6% !important; /* Más compacto verticalmente */
+            font-size: 0.75rem !important; 
         }
     </style>
 </head>
@@ -72,12 +115,11 @@
             </div>
         </div>
         <nav class="nav-capsule-links">
-            <!-- <a href="index.html" class="link-item">INICIO</a> -->
             <a href="cursos.html" class="link-item" onclick="window.history.back();">CURSOS</a>
         </nav>
     </header>
 
-    <!-- CONTENEDOR MÓVIL EXCLUSIVO -->
+    <!-- CONTENEDOR MÓVIL OPTIMIZADO -->
     <div class="dashboard-viewport">
         <div class="vector-blueprint-bg"></div>
         
@@ -88,39 +130,40 @@
             </a>
 
             <div class="mobile-help-card">
-                <h2 style="color: #ffffff; margin-bottom: 15px; font-size: 1.6rem;">¿Necesitas Ayuda con tus Cursos?</h2>
+                <h2 style="color: #ffffff; margin-bottom: 12px; font-size: 1.5rem;">¿Necesitas Ayuda con tus Cursos?</h2>
                 <p class="panel-desc">¿Volando en los primeros ciclos? Ofrecemos soporte estratégico para asegurar tu bica o trica con asesores especializados de la FIME.</p>
                 
-                <div class="services-stack" style="margin-bottom: 25px;">
-                    <div class="service-item" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 6px; margin-bottom: 15px; border-left: 2px solid #00f0ff;">
-                        <div class="service-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                <div class="services-stack" style="margin-bottom: 20px;">
+                    <div class="service-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 6px; margin-bottom: 10px; border-left: 2px solid #00f0ff;">
+                        <div class="service-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
                             <i class="fa-solid fa-user-gear svc-icon" style="color: #00f0ff;"></i>
-                            <h4 style="color: #ffffff; margin: 0;">Asesoría Personal</h4>
+                            <h4 style="color: #ffffff; margin: 0; font-size: 0.95rem;">Asesoría Personal</h4>
                         </div>
-                        <p style="color: #a2b2c8; font-size: 0.9rem; margin: 0 0 8px 0;">Resolución de prácticas dirigidas y preparación exclusiva para cada unidad.</p>
-                        <span class="svc-badge" style="background: rgba(0,240,255,0.1); color: #00f0ff; padding: 2px 8px; font-size: 0.8rem; border-radius: 4px; font-family: monospace;">1° y 2° Ciclo</span>
+                        <p style="color: #a2b2c8; font-size: 0.85rem; margin: 0 0 8px 0;">Resolución de prácticas dirigidas y preparación exclusiva para parciales y finales.</p>
+                        <span class="svc-badge" style="background: rgba(0,240,255,0.1); color: #00f0ff; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px; font-family: monospace;">1° y 2° Ciclo</span>
                     </div>
 
-                    <div class="service-item" style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 6px; border-left: 2px solid #ff0055;">
-                        <div class="service-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <div class="service-item" style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 6px; border-left: 2px solid #ff0055;">
+                        <div class="service-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
                             <i class="fa-solid fa-users svc-icon" style="color: #ff0055;"></i>
-                            <h4 style="color: #ffffff; margin: 0;">Talleres Grupales</h4>
+                            <h4 style="color: #ffffff; margin: 0; font-size: 0.95rem;">Talleres Grupales</h4>
                         </div>
-                        <p style="color: #a2b2c8; font-size: 0.9rem; margin: 0 0 8px 0;">Repasos intensivos antes de exámenes céntricos: Cálculo, Física, Dibujo Mecánico, Programación, etc.</p>
-                        <span class="svc-badge" style="background: rgba(255,0,85,0.1); color: #ff0055; padding: 2px 8px; font-size: 0.8rem; border-radius: 4px; font-family: monospace;">Full Práctica</span>
+                        <p style="color: #a2b2c8; font-size: 0.85rem; margin: 0 0 8px 0;">Repasos intensivos antes de exámenes céntricos: Cálculo, Física y Geometría Descriptiva.</p>
+                        <span class="svc-badge" style="background: rgba(255,0,85,0.1); color: #ff0055; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px; font-family: monospace;">Full Práctica</span>
                     </div>
                 </div>
 
                 <!-- BOTÓN PRINCIPAL DE WHATSAPP -->
-                <a href="https://wa.me/51929028924?text=Hola,%20solicito%20apoyo%20acad%C3%A9mico%20para%20mis%20cursos." target="_blank" class="action-btn-primary full-width-btn" style="text-decoration: none; text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px;">
-                    <span class="btn-inner">SOLICITAR APOYO YA</span>
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+                <a href="https://wa.me/51929028924?text=Hola,%20solicito%20apoyo%20acad%C3%A9mico%20para%20mis%20cursos." target="_blank" class="action-btn-primary full-width-btn" style="text-decoration: none; text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 12px;">
+                    <span class="btn-inner" style="font-weight: 800; font-size: 0.85rem; letter-spacing: 1px;">SOLICITAR APOYO YA</span>
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
                 </a>
             </div>
         </div>
     </div>
-    <!-- PIE DE PÁGINA MINIMALISTA CON ID DE ANCLAJE Y ESTILO DE TRANSICIÓN PARA EL DESTELLO -->
-    <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
+
+    <!-- PIE DE PÁGINA MINIMALISTA INTEGRADO -->
+    <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease; display: flex; justify-content: space-between; align-items: center;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">v2.6.0_FIME</span>
     </footer>
