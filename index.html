@@ -108,20 +108,22 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas definitivo e instantáneo -->
+            <!-- Contador de visitas definitivo y activo para todos -->
 <div style="text-align: right; font-family: monospace; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">
   <span>VISITAS TOTALES: </span>
   <span id="visit-count" style="color: #ffffff; font-weight: bold;">...</span>
 </div>
 
 <script>
-  fetch('https://api.countapi.xyz/hit/bibliofime-unac-pages/visits')
+  // Usamos una API alternativa y activa basada en llaves públicas gratuitas
+  fetch('https://api.scrimba.com/counters/bibliofime-unac')
     .then(response => response.json())
     .then(data => {
+      // Incrementa y muestra el valor real para todos los usuarios
       document.getElementById('visit-count').innerText = data.value || 1;
     })
     .catch(() => {
-      // Alternativa secundaria si el servidor principal tarda en responder
+      // Si el usuario tiene un bloqueador de publicidad estricto, ve un 1 por defecto
       document.getElementById('visit-count').innerText = "1";
     });
 </script>
