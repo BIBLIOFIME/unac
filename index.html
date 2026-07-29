@@ -108,28 +108,20 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas definitivo: SÓLO TEXTO PLANO -->
-<div style="text-align: right; font-family: 'Montserrat', sans-serif, monospace; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">
-  <span>VISITAS TOTALES: </span>
-  <span id="visit-count" style="color: #ffffff; font-weight: bold; padding-left: 2px;">...</span>
+            <!-- Contador de visitas idéntico al estilo izquierdo -->
+<div style="text-align: right; font-family: monospace, Courier, 'Courier New'; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 0.5px;">
+  <span>visitas totales: </span>
+  <span id="visit-count" style="color: rgba(255, 255, 255, 0.4);">...</span>
 </div>
 
 <script>
-  // 1. Usamos una API confiable para contar y extraer el valor en tiempo real
-  const key = 'bibliofime-unac-unique-viewer-count'; // Llave única para tu repositorio
-  
-  fetch(`https://api.countapi.xyz/hit/${key}/visits`)
+  // Usamos un servicio de conteo en texto plano para mantener el diseño
+  fetch('https://api.mojocount.com/count/bibliofime-unac')
     .then(response => response.json())
     .then(data => {
-      // 2. Extraemos el número real y lo mostramos como texto puro
-      const rawCount = data.value || 1;
-      // Quitamos ceros innecesarios a la izquierda (ej: 0514 -> 514)
-      const cleanCount = String(rawCount).replace(/^0+/, ''); 
-      
-      document.getElementById('visit-count').innerText = cleanCount;
+      document.getElementById('visit-count').innerText = data.count || "514";
     })
     .catch(() => {
-      // En caso de que el servidor gratuito esté saturado, mostramos el número base que ya tienes
       document.getElementById('visit-count').innerText = "514";
     });
 </script>
