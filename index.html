@@ -146,22 +146,6 @@
         });
     </script>
 
-    <!-- Contador de visitas definitivo por texto -->
-<div style="text-align: center; margin-top: 20px; padding-bottom: 20px; font-family: Arial, sans-serif;">
-  <p style="font-size: 14px; color: #ffffff; margin-bottom: 5px;">Visitas totales:</p>
-  <span id="visit-count" style="font-size: 18px; font-weight: bold; color: #79C83D; background: #222; padding: 5px 15px; border-radius: 5px; border: 1px solid #444;">...</span>
-</div>
-
-<script>
-  fetch('https://api.mojocounter.com/count/bibliofime-unac')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('visit-count').innerText = data.count || 1;
-    })
-    .catch(() => {
-      document.getElementById('visit-count').innerText = "1";
-    });
-</script>    
-    
+   
 </body>
 </html>
