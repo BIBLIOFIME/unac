@@ -108,23 +108,11 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas idéntico al estilo izquierdo -->
-<div style="text-align: right; font-family: monospace, Courier, 'Courier New'; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 0.5px;">
-  <span>visitas totales: </span>
-  <span id="visit-count" style="color: rgba(255, 255, 255, 0.4);">...</span>
+            <!-- Contador de visitas dinámico y perfectamente integrado -->
+<div style="text-align: right; font-family: monospace, Courier, 'Courier New'; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 0.5px; display: flex; justify-content: flex-end; align-items: center; gap: 5px;">
+  <span>visitas totales:</span>
+  <img src="https://hitwebcounter.com/counter/counter.php?page=17049281&style=0002&nbdigits=1&type=page&initCount=514" title="Visitas" Alt="Visitas" border="0" style="height: 13px; filter: invert(1) grayscale(1) opacity(0.4) brightness(1.8); mix-blend-mode: lighten; vertical-align: middle;">
 </div>
-
-<script>
-  // Usamos un servicio de conteo en texto plano para mantener el diseño
-  fetch('https://api.mojocount.com/count/bibliofime-unac')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('visit-count').innerText = data.count || "514";
-    })
-    .catch(() => {
-      document.getElementById('visit-count').innerText = "514";
-    });
-</script>
         </span>
     </footer>
 
