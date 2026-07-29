@@ -108,14 +108,14 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas adaptado al estilo del footer -->
+            <!-- Contador de visitas definitivo y corregido -->
 <div style="text-align: right; font-family: monospace; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">
   <span>VISITAS TOTALES: </span>
   <span id="visit-count" style="color: #ffffff; font-weight: bold;">...</span>
 </div>
 
 <script>
-  fetch('https://api.mojocounter.com/count/bibliofime-unac')
+  fetch('https://api.mojocount.com/count/bibliofime-unac')
     .then(response => response.json())
     .then(data => {
       document.getElementById('visit-count').innerText = data.count || 1;
