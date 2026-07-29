@@ -108,11 +108,31 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas estilo minimalista para FIME UNAC -->
-<div style="text-align: right; font-family: 'Montserrat', sans-serif, monospace; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px; display: flex; justify-content: flex-end; align-items: center; gap: 5px; opacity: 0.8;">
+            <!-- Contador de visitas definitivo: SÓLO TEXTO PLANO -->
+<div style="text-align: right; font-family: 'Montserrat', sans-serif, monospace; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">
   <span>VISITAS TOTALES: </span>
-  <img src="https://hitwebcounter.com/counter/counter.php?page=17049281&style=0001&nbdigits=1&type=page&initCount=514" title="Contador Minimalista" Alt="Visitas" border="0" style="height: 14px; filter: invert(1) grayscale(1) brightness(1.5);">
+  <span id="visit-count" style="color: #ffffff; font-weight: bold; padding-left: 2px;">...</span>
 </div>
+
+<script>
+  // 1. Usamos una API confiable para contar y extraer el valor en tiempo real
+  const key = 'bibliofime-unac-unique-viewer-count'; // Llave única para tu repositorio
+  
+  fetch(`https://api.countapi.xyz/hit/${key}/visits`)
+    .then(response => response.json())
+    .then(data => {
+      // 2. Extraemos el número real y lo mostramos como texto puro
+      const rawCount = data.value || 1;
+      // Quitamos ceros innecesarios a la izquierda (ej: 0514 -> 514)
+      const cleanCount = String(rawCount).replace(/^0+/, ''); 
+      
+      document.getElementById('visit-count').innerText = cleanCount;
+    })
+    .catch(() => {
+      // En caso de que el servidor gratuito esté saturado, mostramos el número base que ya tienes
+      document.getElementById('visit-count').innerText = "514";
+    });
+</script>
         </span>
     </footer>
 
