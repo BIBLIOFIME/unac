@@ -108,11 +108,24 @@
     <footer id="soporte" class="footer-minimal" style="transition: background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;">
         <span class="dev-sign">© 2026 UNAC - SISTEMA DESARROLLADO POR TARAZONA</span>
         <span class="ver-num">
-            <!-- Contador de visitas dinámico y perfectamente integrado -->
-<div style="text-align: right; font-family: monospace, Courier, 'Courier New'; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 0.5px; display: flex; justify-content: flex-end; align-items: center; gap: 5px;">
-  <span>visitas totales:</span>
-  <img src="https://hitwebcounter.com/counter/counter.php?page=17049281&style=0002&nbdigits=1&type=page&initCount=514" title="Visitas" Alt="Visitas" border="0" style="height: 13px; filter: invert(1) grayscale(1) opacity(0.4) brightness(1.8); mix-blend-mode: lighten; vertical-align: middle;">
+            <!-- Contador de visitas dinámico, nítido y tipografía idéntica -->
+<div style="text-align: right; font-family: monospace, Courier, 'Courier New'; font-size: 13px; color: rgba(255, 255, 255, 0.4); letter-spacing: 0.5px;">
+  <span>visitas totales: </span>
+  <span id="visit-count">...</span>
 </div>
+
+<script>
+  fetch('https://api.counterapi.dev/v1/bibliofime-unac/visits/up')
+    .then(response => response.json())
+    .then(data => {
+      // Aquí se asigna el número real que viene desde internet en tiempo real
+      document.getElementById('visit-count').innerText = data.count;
+    })
+    .catch(() => {
+      // Si falla internet, mostrará un 0 en lugar de un número estático alto
+      document.getElementById('visit-count').innerText = "0";
+    });
+</script>
         </span>
     </footer>
 
