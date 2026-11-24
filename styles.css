@@ -316,7 +316,7 @@ body {
 }
 
 /* ==========================================================================
-   5. TARJETAS CON CORTE MECÁNICO (CHAF LÁN)
+   5. TARJETAS CON CORTE MECÁNICO (CHAFLÁN)
    ========================================================================== */
 .mechanical-cards-container {
     display: grid;
@@ -385,7 +385,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-stack);
-    font-size: 0.7 seam;
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.2);
     background-color: #0a0d14;
 }
