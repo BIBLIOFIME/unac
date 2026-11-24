@@ -115,21 +115,22 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DEL CONTADOR DE VISITAS -->
+    <!-- SCRIPT DEL CONTADOR DE VISITAS GLOBAL -->
     <script>
-        fetch('https://abacus.jasoncameron.dev/hit/bibliofime-unac/visitas')
-            .then(response => {
-                if (!response.ok) throw new Error('Error en la API');
-                return response.json();
-            })
-            .then(data => {
-                document.getElementById('visit-count').innerText = data.value ?? 1;
-            })
-            .catch(() => {
-                let localVisits = parseInt(localStorage.getItem('fime_visits') || '0') + 1;
-                localStorage.setItem('fime_visits', localVisits);
-                document.getElementById('visit-count').innerText = localVisits;
-            });
+        fetch('https://api.counterapi.dev/v1/bibliofime_unac_2026/visitas/up', {
+            cache: 'no-store'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Error HTTP');
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('visit-count').innerText = data.count;
+        })
+        .catch(err => {
+            console.error('Error contador:', err);
+            document.getElementById('visit-count').innerText = "1";
+        });
     </script>
 
     <!-- SCRIPT DE INTERACCIÓN TÉCNICA PARA EL BOTÓN SOPORTE -->
